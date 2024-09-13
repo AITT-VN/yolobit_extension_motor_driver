@@ -1,4 +1,5 @@
-import machine
+from machine import SoftI2C, Pin
+from yolobit import *
 from time import sleep
 from struct import pack, unpack
 
@@ -24,8 +25,8 @@ DC_MOTOR_MAX_SPEED = 100
 STEPPER_MOTOR_MAX_SPEED = 255
 
 class DCMotor():
-    def __init__(self, i2c, address=MD4C_DEFAULT_I2C_ADDRESS):
-        self._i2c = i2c
+    def __init__(self, address=MD4C_DEFAULT_I2C_ADDRESS):
+        self._i2c = SoftI2C(scl=machine.Pin(pin19.pin), sda=machine.Pin(pin20.pin), freq=100000)
         self._addr = address
         self._motor_type = 0x00
         #check connection, not for now
@@ -94,8 +95,8 @@ class DCMotor():
 
 
 class StepperMotor():
-    def __init__(self, i2c, address=MD4C_DEFAULT_I2C_ADDRESS, number_step=200):
-        self._i2c = i2c
+    def __init__(self, address=MD4C_DEFAULT_I2C_ADDRESS, number_step=200):
+        self._i2c = SoftI2C(scl=machine.Pin(pin19.pin), sda=machine.Pin(pin20.pin), freq=100000)
         self._addr = address
         self._motor_type = 0x01
         self._number_step = number_step
