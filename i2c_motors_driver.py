@@ -24,7 +24,7 @@ STEPPER_MODE_STEP = const(1)
 DC_MOTOR_MAX_SPEED = 100
 STEPPER_MOTOR_MAX_SPEED = 255
 
-class DCMotor():
+class DCMotorV1():
     def __init__(self, address=MD4C_DEFAULT_I2C_ADDRESS):
         self._i2c = SoftI2C(scl=machine.Pin(pin19.pin), sda=machine.Pin(pin20.pin), freq=100000)
         self._addr = address
