@@ -49,7 +49,7 @@ Blockly.Blocks['i2c_dc_motor_driver'] = {
     Blockly.Python['i2c_dc_motor_driver'] = function(block) {
         Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
         Blockly.Python.definitions_['import_machine'] = 'import machine';
-        Blockly.Python.definitions_['import_motor_driver'] = 'from i2c_motors_driver import DCMotor';
+        Blockly.Python.definitions_['import_motor_driver'] = 'from i2c_motors_driver import DCMotorV1';
         Blockly.Python.definitions_['create_motor_driver'] = 'driver = DCMotorV1()\n';
         var dropdown_motor = block.getFieldValue('motor');
         var speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
@@ -115,7 +115,7 @@ Blockly.Blocks['i2c_dc_motor_delay'] = {
 Blockly.Python["i2c_dc_motor_delay"] = function (block) {
     Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
     Blockly.Python.definitions_['import_machine'] = 'import machine';
-    Blockly.Python.definitions_['import_motor_driver'] = 'from i2c_motors_driver import DCMotor';
+    Blockly.Python.definitions_['import_motor_driver'] = 'from i2c_motors_driver import DCMotorV1';
     Blockly.Python.definitions_['create_motor_driver'] = 'driver = DCMotorV1()\n';
   var motor = block.getFieldValue('motor');
   var speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
@@ -167,7 +167,7 @@ Blockly.Blocks['i2c_dc_move_motor'] = {
 Blockly.Python["i2c_dc_move_motor"] = function (block) {
   Blockly.Python.definitions_['import_display'] = 'from yolobit import *';
   Blockly.Python.definitions_['import_machine'] = 'import machine';
-  Blockly.Python.definitions_['import_motor_driver'] = 'from i2c_motors_driver import DCMotor';
+  Blockly.Python.definitions_['import_motor_driver'] = 'from i2c_motors_driver import DCMotorV1';
   Blockly.Python.definitions_['create_motor_driver'] = 'driver = DCMotorV1()\n';
   var motor1 = Blockly.Python.valueToCode(block, 'motor1', Blockly.Python.ORDER_ATOMIC);
   var motor2 = Blockly.Python.valueToCode(block, 'motor2', Blockly.Python.ORDER_ATOMIC);
